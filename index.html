@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="DENY">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow">
+<meta name="description" content="Verdant Systems — Premium digital agency building websites, SEO and lead generation for professionals in Johannesburg.">
+<title>Verdant Systems — Digital Presence for Professionals</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --teal:#0F766E;
+  --teal-dark:#134E4A;
+  --teal-mid:#0D9488;
+  --teal-bright:#14B8A6;
+  --teal-pale:#CCFBF1;
+  --teal-light:#F0FDFA;
+  --em:#059669;
+  --em-bright:#10B981;
+  --white:#FFFFFF;
+  --off:#F8FAFC;
+  --surface:#F0FDFA;
+  --char:#0F2420;
+  --gray:#4B7572;
+  --lgray:#6B9E99;
+  --muted:#94A3B8;
+  --bdr:#B2E4DC;
+  --bdr2:#CCFBF1;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--white);color:var(--char);overflow-x:hidden}
+
+/* ─── NAV ─── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.1rem 5rem;display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,.96);backdrop-filter:blur(18px);border-bottom:1px solid var(--bdr2);transition:box-shadow .3s}
+.logo{text-decoration:none;display:flex;align-items:center;gap:.75rem}
+.logo-mark{width:32px;height:32px;background:linear-gradient(135deg,var(--teal-mid),var(--em));border-radius:.55rem;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff}
+.logo-name{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:500;color:var(--teal-dark)}
+.logo-name span{color:var(--teal-mid)}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{text-decoration:none;color:var(--gray);font-size:.83rem;transition:color .2s}
+.nav-links a:hover{color:var(--teal)}
+.nav-cta{background:var(--teal)!important;color:#fff!important;padding:.58rem 1.4rem;border-radius:2rem;font-size:.78rem!important;font-weight:500!important;box-shadow:0 4px 14px rgba(13,148,136,.25)!important;transition:all .2s!important}
+.nav-cta:hover{background:var(--teal-mid)!important;transform:translateY(-1px)!important}
+
+/* ─── HERO ─── */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:5rem;background:linear-gradient(160deg,var(--teal-light) 0%,#fff 50%,#ECFDF5 100%);position:relative;overflow:hidden}
+.hero-orb{position:absolute;border-radius:50%;pointer-events:none}
+.ho1{width:700px;height:700px;top:-200px;right:-150px;background:radial-gradient(circle,rgba(13,148,136,.14) 0%,transparent 65%)}
+.ho2{width:300px;height:300px;bottom:-80px;left:30%;background:radial-gradient(circle,rgba(5,150,105,.1) 0%,transparent 65%)}
+.hero-l{display:flex;flex-direction:column;justify-content:center;padding:4rem 3.5rem 4rem 5rem;position:relative;z-index:1}
+.eyebrow{display:flex;align-items:center;gap:.7rem;margin-bottom:1.5rem}
+.edot{width:6px;height:6px;border-radius:50%;background:var(--teal-mid)}
+.etag{font-size:.7rem;letter-spacing:.2em;color:var(--teal-mid);text-transform:uppercase;font-weight:500}
+h1{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:400;line-height:1.08;margin-bottom:1.5rem;color:var(--teal-dark)}
+h1 em{color:var(--teal-mid);font-style:italic}
+.hero-p{font-size:.95rem;color:var(--gray);line-height:1.85;max-width:440px;margin-bottom:2rem;font-weight:300}
+.hero-btns{display:flex;gap:.9rem;flex-wrap:wrap;margin-bottom:2.75rem}
+.btn{display:inline-block;text-decoration:none;padding:.85rem 1.9rem;border-radius:2rem;font-size:.84rem;font-weight:500;letter-spacing:.04em;transition:all .22s;cursor:pointer;border:none;font-family:'Inter',sans-serif}
+.btn-p{background:var(--teal);color:#fff;box-shadow:0 8px 28px rgba(13,148,136,.28)}
+.btn-p:hover{background:var(--teal-mid);transform:translateY(-2px);box-shadow:0 12px 36px rgba(13,148,136,.38)}
+.btn-o{background:transparent;color:var(--teal);border:1.5px solid var(--teal)}
+.btn-o:hover{background:var(--teal-light)}
+/* stat row */
+.stat-row{display:flex;gap:2.25rem}
+.stat-item{border-left:2px solid var(--teal-pale);padding-left:1rem}
+.stat-n{font-family:'Playfair Display',serif;font-size:1.85rem;font-weight:400;color:var(--teal-mid);line-height:1;display:block}
+.stat-l{font-size:.7rem;color:var(--lgray);letter-spacing:.05em;margin-top:.2rem;display:block}
+
+/* HERO RIGHT — browser mockup stack */
+.hero-r{position:relative;display:flex;align-items:center;justify-content:center;padding:4rem 3rem 4rem 0;z-index:1}
+.mockup-wrap{position:relative;width:100%;max-width:480px}
+/* main browser */
+.browser{background:#fff;border-radius:1rem;box-shadow:0 24px 80px rgba(13,148,136,.18),0 4px 16px rgba(0,0,0,.06);overflow:hidden;border:1px solid var(--bdr2)}
+.browser-bar{background:var(--surface);padding:.7rem 1rem;display:flex;align-items:center;gap:.75rem;border-bottom:1px solid var(--bdr2)}
+.b-dots{display:flex;gap:.35rem}
+.b-dot{width:10px;height:10px;border-radius:50%}
+.b-url{flex:1;background:#fff;border:1px solid var(--bdr2);border-radius:2rem;padding:.3rem .9rem;font-size:.7rem;color:var(--lgray);display:flex;align-items:center;gap:.4rem}
+.b-url-dot{width:5px;height:5px;border-radius:50%;background:var(--em-bright)}
+.browser-body{padding:1.5rem}
+/* mini site preview inside browser */
+.mini-nav{height:8px;background:var(--teal-dark);border-radius:.25rem;margin-bottom:1.25rem}
+.mini-hero{background:linear-gradient(135deg,var(--teal-light),var(--teal-pale));border-radius:.75rem;padding:1.25rem;margin-bottom:1rem;display:grid;grid-template-columns:1fr 1fr;gap:.75rem;align-items:center}
+.mini-lines{display:flex;flex-direction:column;gap:.4rem}
+.mini-line{height:7px;border-radius:2rem;background:rgba(13,148,136,.25)}
+.mini-line.short{width:60%}
+.mini-line.med{width:80%}
+.mini-line.btn-line{width:40%;background:var(--teal);height:14px;border-radius:2rem;margin-top:.3rem}
+.mini-img{background:rgba(13,148,136,.15);border-radius:.5rem;height:65px}
+.mini-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;margin-bottom:1rem}
+.mini-card{background:var(--surface);border-radius:.4rem;padding:.5rem;border:1px solid var(--bdr2)}
+.mini-card-line{height:5px;border-radius:2rem;background:rgba(13,148,136,.2);margin-bottom:.3rem}
+.mini-card-line.short{width:60%}
+/* floating result cards */
+.result-card{position:absolute;background:#fff;border:1px solid var(--bdr2);border-radius:.875rem;padding:1rem 1.1rem;box-shadow:0 8px 32px rgba(13,148,136,.14)}
+.rc1{bottom:-24px;left:-32px;width:180px}
+.rc2{top:24px;right:-28px;width:165px}
+.rc3{bottom:80px;right:-24px;width:155px}
+.rc-label{font-size:.6rem;letter-spacing:.14em;color:var(--teal-mid);text-transform:uppercase;font-weight:500;margin-bottom:.3rem}
+.rc-big{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:500;color:var(--teal-dark);line-height:1}
+.rc-sub{font-size:.68rem;color:var(--lgray);margin-top:.2rem;line-height:1.4}
+.rc-bar{height:3px;background:var(--teal-pale);border-radius:2px;margin-top:.6rem}
+.rc-fill{height:100%;background:linear-gradient(90deg,var(--teal),var(--em-bright));border-radius:2px}
+.live-dot{width:6px;height:6px;border-radius:50%;background:#10B981;display:inline-block;margin-right:.35rem;animation:pulse 2s ease infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+/* second browser (behind) */
+.browser-bg{position:absolute;top:-20px;right:-16px;width:92%;border-radius:1rem;background:#fff;border:1px solid var(--bdr2);box-shadow:0 12px 40px rgba(13,148,136,.1);z-index:-1;overflow:hidden}
+.browser-bg .browser-bar{background:var(--teal-pale)}
+.browser-bg .browser-body{padding:1rem}
+.browser-bg-strip{height:6px;border-radius:2rem;background:rgba(13,148,136,.15);margin-bottom:.5rem}
+
+/* ─── TRUST STRIP ─── */
+.trust{padding:1.75rem 5rem;background:var(--teal-dark)}
+.trust-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:2.5rem;flex-wrap:wrap}
+.trust-lbl{font-size:.68rem;letter-spacing:.16em;color:rgba(255,255,255,.45);text-transform:uppercase;font-weight:500;white-space:nowrap}
+.trust-div{width:1px;height:16px;background:rgba(255,255,255,.15)}
+.trust-items{display:flex;gap:1.75rem;flex-wrap:wrap}
+.trust-item{font-size:.79rem;color:rgba(255,255,255,.5);font-weight:300}
+
+/* ─── SERVICES ─── */
+.services{padding:6rem 5rem;background:var(--white)}
+.services-inner{max-width:1200px;margin:0 auto}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem}
+h2{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:400;line-height:1.2;color:var(--teal-dark);margin-bottom:0}
+h2 em{color:var(--teal-mid);font-style:italic}
+.sec-note{font-size:.82rem;color:var(--muted);max-width:240px;text-align:right;line-height:1.7;font-weight:300}
+.sec-ey{display:flex;align-items:center;gap:.65rem;margin-bottom:.85rem}
+.eline{width:20px;height:1px;background:var(--teal-mid)}
+.etxt{font-size:.67rem;letter-spacing:.18em;color:var(--teal-mid);text-transform:uppercase;font-weight:500}
+/* 3-column rich service cards */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:1.25rem}
+.svc-grid-2{display:grid;grid-template-columns:1fr;gap:1.25rem;max-width:380px}
+.svc{background:var(--surface);border:1px solid var(--bdr2);border-radius:1.1rem;padding:1.75rem;transition:all .25s;position:relative;overflow:hidden}
+.svc::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--teal),var(--em-bright));transform:scaleX(0);transition:transform .3s;transform-origin:left}
+.svc:hover{background:#fff;border-color:var(--bdr);box-shadow:0 12px 40px rgba(13,148,136,.12);transform:translateY(-3px)}
+.svc:hover::after{transform:scaleX(1)}
+.svc-ico-wrap{width:44px;height:44px;background:#fff;border:1px solid var(--bdr2);border-radius:.75rem;display:flex;align-items:center;justify-content:center;font-size:1.15rem;margin-bottom:1.1rem;box-shadow:0 2px 8px rgba(13,148,136,.08)}
+.svc-name{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:500;color:var(--teal-dark);margin-bottom:.5rem}
+.svc-p{font-size:.8rem;color:var(--gray);line-height:1.75;font-weight:300}
+.svc-tag{display:inline-block;background:var(--teal-pale);color:var(--teal);font-size:.65rem;padding:.2rem .65rem;border-radius:2rem;margin-top:.85rem;font-weight:500;letter-spacing:.04em}
+
+/* ─── RESULTS ─── */
+.results{padding:6rem 5rem;background:var(--teal-dark);position:relative;overflow:hidden}
+.results-orb{position:absolute;width:600px;height:600px;top:-200px;right:-150px;border-radius:50%;background:radial-gradient(circle,rgba(20,184,166,.18) 0%,transparent 65%);pointer-events:none}
+.results-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1}
+.results h2{color:#fff;margin-bottom:.75rem}
+.results h2 em{color:var(--teal-bright)}
+.results .sec-ey .eline{background:var(--teal-bright)}
+.results .sec-ey .etxt{color:var(--teal-bright)}
+/* big number strip */
+.numbers-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid rgba(255,255,255,.1);border-radius:1rem;overflow:hidden;margin:2.5rem 0}
+.num{padding:2rem;border-right:1px solid rgba(255,255,255,.08);position:relative}
+.num:last-child{border-right:none}
+.num-big{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:400;color:var(--teal-bright);display:block;line-height:1;margin-bottom:.3rem}
+.num-lbl{font-size:.78rem;color:rgba(255,255,255,.5);font-weight:300;line-height:1.5}
+/* reviews */
+.rv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.rv{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:1.1rem;padding:1.75rem;transition:all .22s}
+.rv:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.18)}
+.rv-stars{color:var(--teal-bright);font-size:.82rem;letter-spacing:.05em;margin-bottom:.85rem}
+.rv-q{font-family:'Playfair Display',serif;font-size:.97rem;font-style:italic;color:rgba(255,255,255,.82);line-height:1.7;margin-bottom:1.1rem}
+.rv-auth{display:flex;align-items:center;gap:.7rem}
+.rv-av{width:34px;height:34px;border-radius:50%;background:rgba(20,184,166,.2);border:1px solid rgba(20,184,166,.35);display:flex;align-items:center;justify-content:center;font-size:.73rem;font-weight:600;color:var(--teal-bright);flex-shrink:0}
+.rv-name{font-size:.8rem;font-weight:500;color:#fff}
+.rv-role{font-size:.7rem;color:rgba(255,255,255,.38)}
+
+/* ─── CONTACT ─── */
+.contact{padding:6rem 5rem;background:var(--surface)}
+.contact-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;align-items:start}
+.contact-l h2{margin-bottom:1rem}
+.contact-l .bp{font-size:.9rem;color:var(--gray);line-height:1.85;font-weight:300;margin-bottom:2rem}
+/* process mini */
+.mini-process{display:flex;flex-direction:column;gap:1rem}
+.mp{display:flex;align-items:flex-start;gap:1rem}
+.mp-num{width:32px;height:32px;border-radius:50%;background:var(--teal-pale);border:1px solid var(--bdr);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:500;color:var(--teal);flex-shrink:0;font-family:'Playfair Display',serif}
+.mp-text{padding-top:.25rem}
+.mp-title{font-size:.83rem;font-weight:500;color:var(--teal-dark);margin-bottom:.15rem}
+.mp-desc{font-size:.76rem;color:var(--lgray);line-height:1.55;font-weight:300}
+/* form */
+.cf{background:#fff;border:1px solid var(--bdr2);border-radius:1.4rem;padding:2.25rem;box-shadow:0 8px 40px rgba(13,148,136,.1)}
+.cf-title{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:400;color:var(--teal-dark);margin-bottom:.25rem}
+.cf-sub{font-size:.77rem;color:var(--muted);margin-bottom:1.75rem;line-height:1.55}
+.fg{display:flex;flex-direction:column;gap:.32rem;margin-bottom:.8rem}
+.fg label{font-size:.67rem;font-weight:500;color:var(--gray);letter-spacing:.06em;text-transform:uppercase}
+.fg input,.fg select,.fg textarea{border:1.5px solid var(--bdr2);border-radius:.5rem;padding:.68rem .95rem;font-size:.82rem;font-family:'Inter',sans-serif;color:var(--char);background:var(--off);transition:all .2s;outline:none;-webkit-appearance:none}
+.fg input::placeholder,.fg textarea::placeholder{color:var(--muted)}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--teal-mid);background:#fff;box-shadow:0 0 0 3px rgba(13,148,136,.1)}
+.fg select option{background:#fff}
+.fg textarea{resize:vertical;min-height:80px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.sub-btn{width:100%;background:var(--teal);color:#fff;padding:.9rem;border-radius:.6rem;border:none;font-family:'Inter',sans-serif;font-size:.875rem;font-weight:500;letter-spacing:.05em;cursor:pointer;transition:all .22s;margin-top:.4rem;box-shadow:0 6px 24px rgba(13,148,136,.28)}
+.sub-btn:hover{background:var(--teal-mid);transform:translateY(-1px)}
+.ok{display:none;background:var(--teal-pale);border:1px solid var(--bdr);border-radius:.5rem;padding:.85rem 1rem;font-size:.8rem;color:var(--teal);font-weight:500;margin-bottom:.85rem;text-align:center}
+.err{display:none;background:#FEE2E2;border:1px solid #FECACA;border-radius:.5rem;padding:.85rem 1rem;font-size:.8rem;color:#DC2626;font-weight:500;margin-bottom:.85rem;text-align:center}
+
+/* ─── FOOTER ─── */
+footer{background:var(--teal-dark);padding:2.25rem 5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;border-top:1px solid rgba(255,255,255,.08)}
+.ft-logo{display:flex;align-items:center;gap:.6rem}
+.ft-mark{width:26px;height:26px;background:linear-gradient(135deg,var(--teal-mid),var(--em));border-radius:.35rem;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:.9rem;font-weight:700;color:#fff}
+.ft-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:500;color:#fff}
+.ft-links{display:flex;gap:1.75rem;flex-wrap:wrap}
+.ft-links a{font-size:.77rem;color:rgba(255,255,255,.3);text-decoration:none;transition:color .2s}
+.ft-links a:hover{color:rgba(255,255,255,.75)}
+.ft-copy{font-size:.72rem;color:rgba(255,255,255,.22)}
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.hero-l>*{animation:fadeUp .7s ease both}
+.hero-l>*:nth-child(1){animation-delay:.08s}
+.hero-l>*:nth-child(2){animation-delay:.18s}
+.hero-l>*:nth-child(3){animation-delay:.28s}
+.hero-l>*:nth-child(4){animation-delay:.37s}
+.hero-l>*:nth-child(5){animation-delay:.45s}
+.hero-r{animation:fadeUp .9s ease .3s both}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:1100px){
+nav{padding:1rem 2rem}
+.hero{grid-template-columns:1fr;padding-top:5rem}
+.hero-l{padding:3.5rem 2.25rem 2.5rem}
+.hero-r{display:none}
+.trust,.services,.contact{padding:4rem 2.25rem}#story{padding:4rem 2.25rem!important}
+.svc-grid,.rv-grid{grid-template-columns:1fr 1fr}.svc-grid-2{grid-template-columns:1fr 1fr}
+.numbers-strip{grid-template-columns:1fr 1fr}
+.num{border-right:none;border-bottom:1px solid rgba(255,255,255,.08)}
+.num:nth-child(odd){border-right:1px solid rgba(255,255,255,.08)}
+.num:last-child{border-bottom:none}
+.sec-head{flex-direction:column;align-items:flex-start;gap:.75rem}
+.sec-note{text-align:left;max-width:100%}
+.contact-inner{grid-template-columns:1fr;gap:3rem}
+footer{padding:2rem 2.25rem;flex-direction:column;align-items:flex-start}
+.ft-links{gap:1.25rem}
+}
+@media(max-width:640px){
+.svc-grid,.svc-grid-2,.rv-grid{grid-template-columns:1fr}
+h1{font-size:2.75rem}
+h2{font-size:1.95rem}
+.stat-row{gap:1.25rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+      <a href="#" class="logo" style="display:flex;align-items:center;text-decoration:none">
+    <svg width="210" height="46" viewBox="0 0 420 108" xmlns="http://www.w3.org/2000/svg">
+      <g transform="translate(8,4)">
+        <circle cx="44" cy="44" r="40" fill="none" stroke="#0D9488" stroke-width="2.8"/>
+        <circle cx="44" cy="44" r="30" fill="none" stroke="#CCFBF1" stroke-width="1"/>
+        <line x1="44" y1="4" x2="44" y2="15" stroke="#0D9488" stroke-width="3" stroke-linecap="round"/>
+        <line x1="44" y1="73" x2="44" y2="84" stroke="#0D9488" stroke-width="2" stroke-linecap="round"/>
+        <line x1="4" y1="44" x2="15" y2="44" stroke="#0D9488" stroke-width="2" stroke-linecap="round"/>
+        <line x1="73" y1="44" x2="84" y2="44" stroke="#0D9488" stroke-width="2" stroke-linecap="round"/>
+        <line x1="16" y1="16" x2="23" y2="23" stroke="#CCFBF1" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="72" y1="16" x2="65" y2="23" stroke="#CCFBF1" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="16" y1="72" x2="23" y2="65" stroke="#CCFBF1" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="72" y1="72" x2="65" y2="65" stroke="#CCFBF1" stroke-width="1.5" stroke-linecap="round"/>
+        <text x="44" y="3" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="10" font-weight="700" fill="#0D9488">N</text>
+        <path d="M18,62 Q44,76 70,62 L66,69 Q44,82 22,69 Z" fill="#0D9488"/>
+        <line x1="44" y1="18" x2="44" y2="63" stroke="#0D9488" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="30" y1="28" x2="58" y2="28" stroke="#0D9488" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="44" y1="38" x2="60" y2="32" stroke="#0D9488" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M44,20 L58,28 L56,56 L44,56 Z" fill="#0D9488"/>
+        <path d="M44,36 L60,32 L57,56 Z" fill="#CCFBF1" stroke="#0D9488" stroke-width="0.9"/>
+        <line x1="30" y1="28" x2="30" y2="63" stroke="#134E4A" stroke-width="2" stroke-linecap="round"/>
+        <path d="M30,30 L30,28 L44,34 L43,58 L30,58 Z" fill="#134E4A" opacity="0.75"/>
+        <circle cx="44" cy="44" r="4" fill="#134E4A"/>
+        <circle cx="44" cy="44" r="2" fill="#CCFBF1"/>
+      </g>
+      <line x1="108" y1="12" x2="108" y2="96" stroke="#B2E4DC" stroke-width="2"/>
+      <text x="124" y="62" font-family="Playfair Display,Georgia,serif" font-size="36" font-weight="500" fill="#134E4A">Verdant</text>
+      <text x="268" y="62" font-family="Playfair Display,Georgia,serif" font-size="36" font-weight="400" fill="#0D9488"> Systems</text>
+    </svg>
+  </a>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="nav-cta">Start a Project</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-orb ho1"></div>
+  <div class="hero-orb ho2"></div>
+  <div class="hero-l">
+    <div class="eyebrow"><div class="edot"></div><span class="etag">Premium Digital Agency — Johannesburg</span></div>
+    <h1>Your practice,<br>finally <em>visible</em><br>to the right people</h1>
+    <p class="hero-p">We build high-performance websites, generate qualified leads, and handle the full digital presence of therapists, coaches, consultants, and professionals across Gauteng.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn btn-p">Start a Project</a>
+      <a href="#services" class="btn btn-o">See Our Services</a>
+    </div>
+    <div class="stat-row">
+      <div class="stat-item"><span class="stat-n">Joburg</span><span class="stat-l">Based &amp; focused</span></div>
+      <div class="stat-item"><span class="stat-n">SA</span><span class="stat-l">Professional market specialists</span></div>
+    </div>
+  </div>
+  <div class="hero-r">
+    <!-- Background browser -->
+    <div class="browser-bg">
+      <div class="browser-bar"><div class="b-dots"><div class="b-dot" style="background:#CCFBF1"></div><div class="b-dot" style="background:#CCFBF1"></div><div class="b-dot" style="background:#CCFBF1"></div></div></div>
+      <div class="browser-body">
+        <div class="browser-bg-strip" style="width:100%"></div>
+        <div class="browser-bg-strip" style="width:70%"></div>
+        <div class="browser-bg-strip" style="width:50%;margin-top:.75rem"></div>
+      </div>
+    </div>
+    <div class="mockup-wrap">
+      <!-- Main browser mockup -->
+      <div class="browser">
+        <div class="browser-bar">
+          <div class="b-dots">
+            <div class="b-dot" style="background:#FCA5A5"></div>
+            <div class="b-dot" style="background:#FDE68A"></div>
+            <div class="b-dot" style="background:#6EE7B7"></div>
+          </div>
+          <div class="b-url"><div class="b-url-dot"></div>www.yourclientsite.co.za</div>
+        </div>
+        <div class="browser-body">
+          <div class="mini-nav"></div>
+          <div class="mini-hero">
+            <div class="mini-lines">
+              <div class="mini-line" style="width:55%;height:5px;background:rgba(13,148,136,.18)"></div>
+              <div class="mini-line med"></div>
+              <div class="mini-line short"></div>
+              <div class="mini-line btn-line"></div>
+            </div>
+            <div class="mini-img"></div>
+          </div>
+          <div class="mini-cards">
+            <div class="mini-card"><div class="mini-card-line"></div><div class="mini-card-line short"></div><div class="mini-card-line" style="width:40%"></div></div>
+            <div class="mini-card"><div class="mini-card-line"></div><div class="mini-card-line short"></div><div class="mini-card-line" style="width:40%"></div></div>
+            <div class="mini-card"><div class="mini-card-line"></div><div class="mini-card-line short"></div><div class="mini-card-line" style="width:40%"></div></div>
+          </div>
+          <div style="background:var(--teal-light);border-radius:.35rem;padding:.75rem;display:flex;gap:.5rem;align-items:center">
+            <div style="flex:1"><div class="mini-card-line" style="background:rgba(13,148,136,.25);margin-bottom:.3rem"></div><div class="mini-card-line short" style="background:rgba(13,148,136,.15)"></div></div>
+            <div style="width:50px;height:22px;background:var(--teal);border-radius:2rem"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Result cards -->
+      <div class="result-card rc1">
+        <div class="rc-label"><span class="live-dot"></span>How it works</div>
+        <div style="font-size:.8rem;color:var(--teal-dark);font-weight:500;margin-top:.15rem">Client finds you on Google</div>
+        <div class="rc-sub">Lands on your website · Books a session</div>
+      </div>
+      <div class="result-card rc2">
+        <div class="rc-label">Our focus</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:500;color:var(--teal-dark);line-height:1.2;margin:.3rem 0">Professionals<br>only</div>
+        <div class="rc-sub">Therapists, coaches, consultants</div>
+      </div>
+      <div class="result-card rc3">
+        <div class="rc-label">What we build</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:500;color:var(--teal-dark);line-height:1.3;margin:.3rem 0">Websites that<br>convert</div>
+        <div class="rc-sub">Design · SEO · Lead generation</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<div class="trust">
+  <div class="trust-inner">
+    <span class="trust-lbl">Built for</span>
+    <div class="trust-div"></div>
+    <div class="trust-items">
+      <span class="trust-item">Therapists &amp; Counsellors</span>
+      <span class="trust-item">Life Coaches</span>
+      <span class="trust-item">Consultants</span>
+      <span class="trust-item">Lawyers &amp; Advocates</span>
+      <span class="trust-item">Accountants</span>
+      <span class="trust-item">Healthcare Practitioners</span>
+      <span class="trust-item">Architects &amp; Designers</span>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-inner">
+    <div class="sec-head">
+      <div>
+        <div class="sec-ey"><div class="eline"></div><span class="etxt">What We Do</span></div>
+        <h2>Everything your practice needs<br>to grow <em>online</em></h2>
+      </div>
+      <p class="sec-note">Every service available standalone or as part of a full retainer.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc">
+        <div class="svc-ico-wrap">🌐</div>
+        <div class="svc-name">Website Design &amp; Development</div>
+        <p class="svc-p">Bespoke, high-performance websites that convert visitors into enquiries. Built to reflect the true calibre of your practice — not a template.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-ico-wrap">🎯</div>
+        <div class="svc-name">Lead Generation</div>
+        <p class="svc-p">Targeted campaigns that bring qualified prospects to your door — people actively searching for what you offer, in your area, ready to engage.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-ico-wrap">🔍</div>
+        <div class="svc-name">SEO &amp; Google Ranking</div>
+        <p class="svc-p">Local SEO and content strategy that puts your practice in front of the right people — when clients are searching for exactly what you offer.</p>
+      </div>
+    </div>
+    <div class="svc-grid-2" style="margin-top:1.25rem">
+
+      <div class="svc">
+        <div class="svc-ico-wrap">🔧</div>
+        <div class="svc-name">Maintenance &amp; Support</div>
+        <p class="svc-p">Monthly retainers that keep your website fast, secure, and current. Updates, monitoring, and priority support included.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ABOUT -->
+<section id="about" style="padding:5.5rem 5rem;background:var(--surface)">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;align-items:center">
+
+    <div>
+      <div class="sec-ey"><div class="eline"></div><span class="etxt">Who We Are</span></div>
+      <h2 style="margin-bottom:1.75rem">Your clients are<br>searching for you<br><em>right now</em></h2>
+
+      <p style="font-size:.93rem;color:var(--gray);line-height:1.9;font-weight:300;margin-bottom:1.25rem">
+        They need what you offer. They are ready to reach out. And they cannot find you.
+      </p>
+
+      <p style="font-size:.93rem;color:var(--gray);line-height:1.9;font-weight:300;margin-bottom:1.25rem">
+        Talented professionals across Johannesburg are losing clients every day. Not because of what they lack, but because of what they are missing — the right digital presence to point people in their direction.
+      </p>
+
+      <p style="font-size:.93rem;color:var(--gray);line-height:1.9;font-weight:300;margin-bottom:2rem">
+        Verdant Systems changes that. We build digital presences that reflect the true quality of the professionals behind them, and that bring the right clients through the door.
+      </p>
+
+      <a href="#contact" style="display:inline-block;background:var(--teal);color:#fff;padding:.82rem 1.85rem;border-radius:2rem;font-size:.84rem;font-weight:500;text-decoration:none;letter-spacing:.04em;box-shadow:0 6px 20px rgba(13,148,136,.28)">Start a Conversation</a>
+    </div>
+
+    <div style="background:var(--white);border:1px solid var(--bdr2);border-radius:1.4rem;padding:2.5rem;box-shadow:0 8px 40px rgba(13,148,136,.08)">
+      <div style="width:88px;height:88px;border-radius:50%;background:var(--teal-pale);border:3px solid var(--bdr2);display:flex;align-items:center;justify-content:center;font-size:2rem;margin-bottom:1.25rem">👤</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:500;color:var(--teal-dark);margin-bottom:.2rem">Ashthira Maharaj</div>
+      <div style="font-size:.72rem;letter-spacing:.13em;color:var(--teal-mid);text-transform:uppercase;font-weight:500;margin-bottom:1.25rem">Founder, Verdant Systems</div>
+      <p style="font-size:.88rem;color:var(--gray);line-height:1.87;font-weight:300;margin-bottom:.9rem">Ashthira understands the world professionals operate in, the pressure of building a client base, and what it actually takes to stand out in a competitive market.</p>
+      <p style="font-size:.88rem;color:var(--gray);line-height:1.87;font-weight:300">That understanding is what makes Verdant Systems different. We do not just build websites. We understand the business behind them.</p>
+      <div style="display:flex;gap:.4rem;flex-wrap:wrap;margin-top:1.25rem">
+        <span style="background:var(--teal-pale);border:1px solid var(--bdr2);color:var(--teal);font-size:.66rem;padding:.2rem .65rem;border-radius:2rem;font-weight:500;letter-spacing:.04em">Website Development</span>
+        <span style="background:var(--teal-pale);border:1px solid var(--bdr2);color:var(--teal);font-size:.66rem;padding:.2rem .65rem;border-radius:2rem;font-weight:500;letter-spacing:.04em">Lead Generation</span>
+        <span style="background:var(--teal-pale);border:1px solid var(--bdr2);color:var(--teal);font-size:.66rem;padding:.2rem .65rem;border-radius:2rem;font-weight:500;letter-spacing:.04em">SEO</span>
+        <span style="background:var(--teal-pale);border:1px solid var(--bdr2);color:var(--teal);font-size:.66rem;padding:.2rem .65rem;border-radius:2rem;font-weight:500;letter-spacing:.04em">Digital Strategy</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="contact-l">
+      <div class="sec-ey"><div class="eline"></div><span class="etxt">Get Started</span></div>
+      <h2>Let's build your<br><em>practice</em> online</h2>
+      <p class="bp">Tell us about your practice and what you want to achieve. We respond within one business day with a clear next step — no obligation, no pressure.</p>
+      <div class="mini-process">
+        <div class="mp"><div class="mp-num">01</div><div class="mp-text"><div class="mp-title">Discovery call — 30 min, free</div><div class="mp-desc">We learn about your practice and what success looks like for you.</div></div></div>
+        <div class="mp"><div class="mp-num">02</div><div class="mp-text"><div class="mp-title">Tailored proposal</div><div class="mp-desc">A clear strategy, timeline, and investment. No generic packages.</div></div></div>
+        <div class="mp"><div class="mp-num">03</div><div class="mp-text"><div class="mp-title">Design, build, launch</div><div class="mp-desc">Live within 3–6 weeks. Then we grow it together.</div></div></div>
+      </div>
+    </div>
+    <div class="cf">
+      <h3 class="cf-title">Start a conversation</h3>
+      <p class="cf-sub">📞 061 420 8813 &nbsp;·&nbsp; 📧 hello@verdantsystems.co.za &nbsp;·&nbsp; 🕐 Mon–Fri 8am–6pm</p>
+      <div class="ok" id="okMsg">✓ Message received. We will be in touch within one business day.</div>
+      <div class="err" id="errMsg">Something went wrong. Please email us directly at hello@verdantsystems.co.za</div>
+      <form id="contactForm" novalidate>
+        <!-- Formspree honeypot — catches bots silently -->
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="_subject" value="New enquiry — Verdant Systems website">
+        <div class="row2">
+          <div class="fg"><label for="fname">First name</label><input id="fname" name="first_name" type="text" placeholder="Your name" required></div>
+          <div class="fg"><label for="lname">Last name</label><input id="lname" name="last_name" type="text" placeholder="Last name" required></div>
+        </div>
+        <div class="row2">
+          <div class="fg"><label for="email">Email</label><input id="email" name="email" type="email" placeholder="you@email.com" required></div>
+          <div class="fg"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" placeholder="+27 61 420 8813"></div>
+        </div>
+        <div class="fg">
+          <label for="profession">Your profession</label>
+          <select id="profession" name="profession" required>
+            <option value="">Select your field...</option>
+            <option>Therapist / Counsellor / Psychologist</option>
+            <option>Life Coach / Mentor</option>
+            <option>Business Consultant / Advisor</option>
+            <option>Legal Professional</option>
+            <option>Financial Advisor / Accountant</option>
+            <option>Healthcare / Medical Professional</option>
+            <option>Architect / Designer / Creative</option>
+            <option>Other Professional</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label for="service">What are you looking for?</label>
+          <select id="service" name="service">
+            <option value="">Select a service...</option>
+            <option>New website design &amp; development</option>
+            <option>Lead generation &amp; marketing</option>
+            <option>SEO &amp; Google ranking</option>
+            <option>Paid advertising</option>
+            <option>Full digital retainer</option>
+            <option>Not sure yet — want advice</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label for="message">Tell us about your practice</label>
+          <textarea id="message" name="message" placeholder="What do you do, who do you serve, and what is your biggest challenge right now?"></textarea>
+        </div>
+        <button type="submit" class="sub-btn" id="submitBtn">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-logo"><svg width="210" height="46" viewBox="0 0 420 108" xmlns="http://www.w3.org/2000/svg">
+      <g transform="translate(8,4)">
+        <circle cx="44" cy="44" r="40" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="2.5"/>
+        <circle cx="44" cy="44" r="30" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+        <line x1="44" y1="4" x2="44" y2="14" stroke="#14B8A6" stroke-width="2.8" stroke-linecap="round"/>
+        <line x1="44" y1="74" x2="44" y2="84" stroke="rgba(255,255,255,0.3)" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="4" y1="44" x2="14" y2="44" stroke="rgba(255,255,255,0.3)" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="74" y1="44" x2="84" y2="44" stroke="rgba(255,255,255,0.3)" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="16" y1="16" x2="23" y2="23" stroke="rgba(255,255,255,0.18)" stroke-width="1.4" stroke-linecap="round"/>
+        <line x1="72" y1="16" x2="65" y2="23" stroke="rgba(255,255,255,0.18)" stroke-width="1.4" stroke-linecap="round"/>
+        <line x1="16" y1="72" x2="23" y2="65" stroke="rgba(255,255,255,0.18)" stroke-width="1.4" stroke-linecap="round"/>
+        <line x1="72" y1="72" x2="65" y2="65" stroke="rgba(255,255,255,0.18)" stroke-width="1.4" stroke-linecap="round"/>
+        <text x="44" y="3" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="10" font-weight="700" fill="#14B8A6">N</text>
+        <path d="M16,62 Q44,76 72,62 L68,69 Q44,82 20,69 Z" fill="#14B8A6"/>
+        <line x1="44" y1="18" x2="44" y2="63" stroke="#14B8A6" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="30" y1="28" x2="58" y2="28" stroke="#14B8A6" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="44" y1="38" x2="60" y2="32" stroke="#14B8A6" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M44,20 L58,28 L56,56 L44,56 Z" fill="#14B8A6"/>
+        <path d="M44,36 L60,32 L57,56 Z" fill="rgba(255,255,255,0.22)" stroke="#14B8A6" stroke-width="0.9"/>
+        <line x1="30" y1="28" x2="30" y2="63" stroke="rgba(255,255,255,0.55)" stroke-width="2" stroke-linecap="round"/>
+        <path d="M30,30 L30,28 L44,34 L43,58 L30,58 Z" fill="rgba(255,255,255,0.18)"/>
+        <circle cx="44" cy="44" r="4" fill="rgba(255,255,255,0.9)"/>
+        <circle cx="44" cy="44" r="2" fill="#134E4A"/>
+      </g>
+      <line x1="108" y1="12" x2="108" y2="96" stroke="rgba(255,255,255,0.18)" stroke-width="2"/>
+      <text x="124" y="62" font-family="Playfair Display,Georgia,serif" font-size="36" font-weight="500" fill="#ffffff">Verdant</text>
+      <text x="268" y="62" font-family="Playfair Display,Georgia,serif" font-size="36" font-weight="400" fill="#14B8A6"> Systems</text>
+    </svg></div>
+    <span class="ft-name">Verdant Systems</span>
+  </div>
+  <div class="ft-links">
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a href="privacy.html" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.7);padding:.35rem .9rem;border-radius:2rem;font-size:.75rem;text-decoration:none;transition:all .2s">Privacy Policy</a>
+  </div>
+  <div style="margin-top:.5rem">
+    <p style="font-size:.72rem;letter-spacing:.15em;color:rgba(255,255,255,.35);text-transform:uppercase;font-weight:400;margin-bottom:.3rem">Digital Agency · Johannesburg</p>
+    <p style="font-family:'Playfair Display',Georgia,serif;font-size:.82rem;font-style:italic;color:rgba(255,255,255,.3)">Our clients have the expertise. We provide the direction.</p>
+  </div>
+  <p class="ft-copy">© 2026 Verdant Systems · Johannesburg, South Africa</p>
+</footer>
+
+<script>
+const FORMSPREE_ID = 'xreroqok';
+
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  const ok  = document.getElementById('okMsg');
+  const err = document.getElementById('errMsg');
+  ok.style.display = 'none';
+  err.style.display = 'none';
+
+  // Basic validation
+  const email = document.getElementById('email').value.trim();
+  const fname = document.getElementById('fname').value.trim();
+  const profession = document.getElementById('profession').value;
+  if (!fname || !email || !profession) {
+    err.textContent = 'Please fill in your name, email, and profession before sending.';
+    err.style.display = 'block';
+    return;
+  }
+
+  // Loading state
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  btn.style.opacity = '.7';
+
+  try {
+    const data = new FormData(this);
+    const res = await fetch('https://formspree.io/f/' + FORMSPREE_ID, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (res.ok) {
+      ok.style.display = 'block';
+      ok.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      this.reset();
+    } else {
+      const json = await res.json();
+      throw new Error(json.error || 'Submission failed');
+    }
+  } catch (e) {
+    err.style.display = 'block';
+    err.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    console.error('Form error:', e);
+  } finally {
+    btn.textContent = 'Send Message';
+    btn.disabled = false;
+    btn.style.opacity = '1';
+  }
+});
+
+/* ── NAV SHADOW ON SCROLL ── */
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').style.boxShadow =
+    window.scrollY > 40 ? '0 4px 24px rgba(13,148,136,.12)' : 'none';
+});
+</script>
+
+<!-- WhatsApp Float Button -->
+<a href="https://wa.me/27740385693?text=Hi%20Verdant%20Systems%2C%20I%20would%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener noreferrer"
+   style="position:fixed;bottom:1.75rem;right:1.75rem;z-index:999;width:54px;height:54px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:all .22s;text-decoration:none"
+   onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.858L.057 23.428a.75.75 0 00.916.916l5.57-1.476A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.7-.497-5.254-1.367l-.376-.214-3.892 1.031 1.031-3.892-.214-.376A9.943 9.943 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+  </svg>
+</a>
+</body>
+</html>
