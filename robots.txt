@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://verdantsystems.co.za/sitemap.xml
